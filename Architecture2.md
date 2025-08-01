@@ -43,6 +43,7 @@ end
 
 # Web 서버 구축
 
+
 ## 1. HTTP
 
 ### 1.1 HTTP 설치
@@ -60,6 +61,8 @@ sudo systemctl enable httpd
 sudo firewall-cmd --add-service=http --permanent
 sudo firewall-cmd --reload
 ```
+<br>
+
 ## 2. PHP
 
 ### 2.1 PHP 설치
@@ -68,6 +71,9 @@ sudo dnf install -y php php-mysqlnd
 ```
 
 wordpress는 php로 실행되므로, 이를 위해 php와 mysql 데이터베이스 연결을 위한 php-mysqld 패키지를 설치한다.
+
+<br>
+
 
 ## 3. WordPress
 
@@ -127,6 +133,18 @@ sudo vi /etc/httpd/conf.d/wordpress.conf
 ```bash
 sudo systemctl restart httpd
 ```
+<br>
+
+## 4. SELinux
+### 4.1 SELinux 설정
+```sudo
+sudo setsebool -P httpd_can_network_connect_db 1
+```
+웹서버가 외부 DB와 연결될 수 있도록 SELinux의 보안 설정을 변경한다.
+
+<br>
+
+
 ## 5. MySQL
 ### 5.1 MySQL 설치
 ```bash
@@ -139,6 +157,9 @@ mysql -h "DB 서버 ip 주소" -u "mysql user 이름" -p
 ```bash
 mysql -h 192.168.56.12 -u wp2-user -p
 ```
+
+<br><br>
+
 
 # DB 서버 구축
 ## 1. MySQL 

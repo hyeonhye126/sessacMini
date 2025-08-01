@@ -1,4 +1,4 @@
-# Archtecture2. WordPress 2-Tier 아키텍쳐
+# Architecture2. WordPress 2-Tier 아키텍쳐
 이 프로젝트는 WordPress 웹 서버와 MySQL 데이터베이스 서버를 분리하여
 **2-Tier**로 구성한 Vagrant 환경 설정 예시입니다. 
 <br><br>

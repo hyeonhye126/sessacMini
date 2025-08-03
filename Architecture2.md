@@ -192,8 +192,8 @@ mysql> create user 'mysql user 이름'@'DB 서버의 게이트웨이' identified
 mysql>  grant all privileges on "database 이름".* to 'mysql user 이름'@'DB 서버의 게이트웨이';
 ```
 ```mysql
-mysql> DROP USER 'wp2-user'@'192.168.56.12';
-Query OK, 0 rows affected (0.00 sec)
+mysql> create database wp2;
+Query OK, 1 row affected (0.02 sec)
 
 mysql> CREATE USER 'wp2-user'@'192.168.56.11' IDENTIFIED BY 'qwer2';
 Query OK, 0 rows affected (0.01 sec)
